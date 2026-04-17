@@ -53,40 +53,50 @@ function HeroSection() {
               &nbsp;scalable Backend systems</span>
           </h2>
 
-         <div className="flex justify-center md:justify-start gap-4">
-  {[FaLinkedinIn, FaGithub].map((Icon, i) => (
-    <a
-      key={i}
-      href="#"
-      className="hover:scale-110 transition-all duration-200 bg-gray-500/20 border border-white/10 rounded-full p-4 hover:bg-[#9933ff] text-white text-xl"
-    >
-      <Icon />
-    </a>
-  ))}
+          <div className="flex justify-center md:justify-start gap-4">
+            <a
+              href="https://www.linkedin.com/in/ayush-kothari-522958290/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:scale-110 transition-all duration-200 bg-gray-500/20 border border-white/10 rounded-full p-4 hover:bg-[#9933ff] text-white text-xl"
+            >
+              <FaLinkedinIn />
+            </a>
 
-  {/* LeetCode Image Icon */}
-  <a
-    href="#"
-    className="hover:scale-110 transition-all duration-200 bg-gray-500/20 border border-white/10 rounded-full p-4 hover:bg-[#9933ff]"
-  >
-    <img
-      src={leetcodeIcon}
-      alt="LeetCode"
-      className="w-5 h-5 object-contain"
-    />
-  </a>
-</div>
+            <a
+              href="https://github.com/Ayushkothari47"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:scale-110 transition-all duration-200 bg-gray-500/20 border border-white/10 rounded-full p-4 hover:bg-[#9933ff] text-white text-xl"
+            >
+              <FaGithub />
+            </a>
+
+            {/* LeetCode Image Icon */}
+            <a
+              href="https://leetcode.com/u/Ayushkotharii47/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:scale-110 transition-all duration-200 bg-gray-500/20 border border-white/10 rounded-full p-4 hover:bg-[#9933ff]"
+            >
+              <img
+                src={leetcodeIcon}
+                alt="LeetCode"
+                className="w-5 h-5 object-contain"
+              />
+            </a>
+          </div>
         </div>
 
         {/* RIGHT IMAGE SECTION */}
         <div className="flex justify-center md:justify-end w-full md:w-auto md:mr-20 relative">
           <div className="relative w-96 h-96 md:w-[28rem] md:h-[28rem]">
             {/* Profile Image */}
-           <img
-  src={profilePic}
-  alt="profile"
-  className="w-full h-full object-contain shadow-2xl rounded-2xl animate-float relative z-20"
-/>
+            <img
+              src={profilePic}
+              alt="profile"
+              className="w-full h-full object-contain shadow-2xl rounded-2xl animate-float relative z-20"
+            />
 
             {/* Icons Container */}
             {circlePositions.map((pos, i) => (
