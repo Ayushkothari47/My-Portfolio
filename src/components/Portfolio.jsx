@@ -10,7 +10,7 @@ function FullPortfolio() {
     <div className="min-h-screen bg-none flex flex-col lg:flex-row p-6 gap-6 ml-[10%]">
 
       {/* Left Sidebar */}
-     <div className="w-full lg:w-[clamp(240px,22vw,300px)] 
+      <div className="w-full lg:w-[clamp(240px,22vw,300px)] 
   bg-gradient-to-br from-purple-500/1 to-white/10 backdrop-blur-lg 
   border border-purple-300/20 rounded-xl shadow-xl 
   p-[clamp(12px,2vw,24px)] 
@@ -26,7 +26,7 @@ function FullPortfolio() {
         />
         <h2 className="text-xl font-semibold text-white">Ayush Kothari</h2>
         <p className="text-[#9933ff] text-sm mb-3">Backend Developer</p>
-      
+
 
         <hr className="my-5 border-gray-300" />
 
@@ -37,7 +37,7 @@ function FullPortfolio() {
             <p className="text-gray-500 text-xs">PROJECTS</p>
           </div>
           <div>
-            <h3 className="text-lg font-bold text-[#ffffff]">100+</h3>
+            <h3 className="text-lg font-bold text-[#ffffff]">112</h3>
             <p className="text-gray-500 text-xs">@ LeetCode</p>
           </div>
           <div>
@@ -58,16 +58,6 @@ function FullPortfolio() {
             <FaDownload /> Download Resume
           </a>
         </div>
-
-        <hr className="my-4 border-gray-300" />
-
-        {/* Social Icons */}
-        <div className="flex justify-center gap-5 text-gray-600 text-xl">
-          <a href="#" className="hover:text-blue-600 transition"><FaLinkedin /></a>
-          <a href="#" className="hover:text-white transition"><FaGithub /></a>
-          <a href="#" className="hover:text-blue-400 transition"><FaTwitter /></a>
-          <a href="#" className="hover:text-pink-500 transition"><FaInstagram /></a>
-        </div>
       </div>
 
       {/* Right Main Content */}
@@ -84,13 +74,9 @@ function FullPortfolio() {
 
         {/* Description */}
         <p className="text-gray-600 mb-6 text-white text-sm">
-          At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-          voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-          occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
-          mollitia animi.
-          <br /><br />
-          Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe
-          eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+          Hi, I’m Ayush — a passionate Developer who enjoys building clean, functional, and user-focused digital experiences. I like working on web technologies and solving problems through code.
+          I’m someone who values simplicity, performance, and continuous learning. I enjoy exploring new tools and improving my skills by working on real-world projects and challenges.
+        
         </p>
 
         {/* Info Cards */}
