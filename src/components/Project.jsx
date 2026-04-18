@@ -27,15 +27,6 @@ const projects = [
     },
     {
         id: 2,
-        tag: "Web", 
-        slug: "inventory-management",
-        img: pic,
-        title: "Inventory Management",
-        desc: "An Inventory Management Software for managing inventory",
-        associationWith: [ciplIcon],
-    },
-    {
-        id: 3,
         tag: "Internet of Things (IoT)",
         slug: "swasthya-naari",
         img: swathyaNaariThumb,
@@ -44,7 +35,7 @@ const projects = [
         associationWith: [dbuuIcon],
     },
     {
-        id: 4, 
+        id: 3, 
         tag: "Internet of Things (IoT)",
         slug: "smart-city",
         img: smartCityThumb,
@@ -53,7 +44,7 @@ const projects = [
         associationWith: [dbuuIcon],
     },
     {
-        id: 5,
+        id: 4,
         tag: "Embedded System",
         slug: "jeevan-prakash",
         img: jeevanPrakashThumb,
@@ -62,7 +53,7 @@ const projects = [
         associationWith: [dbuuIcon],
     },
     {
-        id: 6,
+        id: 5,
         tag: "Embedded System",
         slug: "smart-car-parking",
         img: pic,
@@ -71,7 +62,7 @@ const projects = [
         associationWith: [dbuuIcon],
     },
     {
-        id: 7,
+        id: 6,
         tag: "Tools",
         slug: "link-analyzer",
         img: linkAnalyzerThumb,
