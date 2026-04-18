@@ -17,11 +17,22 @@ function ProjectDetailPage() {
     const { slug } = useParams();
     const navigate = useNavigate();
 
+    // ✅ NEW: Scroll to top whenever the component loads or the slug changes
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth", // Optional: makes the scroll smooth instead of instant
+        });
+    }, [slug]);
+
     const projectDetails = [
         {
             slug: "aarna-enterprises",
             title: "Aarna Enterprises",
             category: "Web Development Project",
+            // ✅ NEW: Added the live link to your project object
+            liveLink: "https://aarnaenterprises.vercel.app/", 
             images: getProjectImages("aarnaEnterprises", 12),
             overview:
                 "A custom-built, responsive website developed for a travel business in Rishikesh to enhance online visibility and streamline lead generation, tailored to meet specific client requirements.",
@@ -42,23 +53,15 @@ function ProjectDetailPage() {
                 "Optimized performance for fast loading",
             ],
             challenges: [
-                "Ensuring consistent performance across devices and network conditions",
-                "Optimizing asset loading and reducing initial load time",
-                "Building a scalable and responsive UI for multiple screen sizes",
+                "Client required a zero-maintenance-cost solution, so the backend was deployed on Render and the frontend on Vercel using free-tier plans. A key challenge was Render’s inactivity timeout, which causes cold start delays. This was addressed by preloading essential assets on the frontend and triggering a background request on page load, ensuring the backend initializes seamlessly without impacting user experience.",
+                  "Optimizing asset loading and reducing initial load time",
             ],
-            solution: [
-                "Implemented Tailwind CSS to build a fully responsive UI across all devices.",
-                "Optimized images and media assets for faster loading.",
-                "Developed a custom CMS to manage content and gallery uploads efficiently.",
-                "Integrated automated email service for user notifications.",
-                "Ensured smooth client-side interactions and minimized re-renders for performance.",
-            ],
+            
             learnings: [
                 "Gained hands-on experience in real-world client project management.",
-                "Enhanced frontend design skills using Tailwind CSS and responsive layouts.",
                 "Learned to handle multiple APIs efficiently with low latency.",
-                "Implemented robust authentication and user authorization.",
                 "Built experience with content management workflows and automated email services.",
+                "Utilizing fallback technique for cold start servers."
             ],
         },
     ];
@@ -94,13 +97,34 @@ function ProjectDetailPage() {
 
                 <main className="flex-grow max-w-7xl mx-auto px-6 md:px-12 py-16 w-full">
                     {/* Header Section */}
-                    <header className="text-center mb-16">
+                    <header className="text-center mb-16 flex flex-col items-center">
                         <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 drop-shadow-lg mb-4">
                             {project.title}
                         </h1>
-                        <p className="text-lg md:text-xl text-gray-300 font-medium tracking-widest uppercase">
+                        <p className="text-lg md:text-xl text-gray-300 font-medium tracking-widest uppercase mb-8">
                             {project.category}
                         </p>
+
+                        {/* ✅ NEW: Beautiful Live Link Button */}
+                        {project.liveLink && (
+                            <a 
+                                href={project.liveLink} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="group relative inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-white transition-all duration-200 bg-purple-600 border border-transparent rounded-full hover:bg-purple-700 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:-translate-y-1"
+                            >
+                                View Live Project
+                                <svg 
+                                    className="w-5 h-5 ml-2 -mr-1 transition-transform duration-200 group-hover:translate-x-1" 
+                                    fill="none" 
+                                    stroke="currentColor" 
+                                    viewBox="0 0 24 24" 
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </a>
+                        )}
                     </header>
 
                     {/* ✅ UPGRADED IMAGE CAROUSEL */}
@@ -144,10 +168,6 @@ function ProjectDetailPage() {
                     </div>
 
                     <div className="mt-8 grid grid-cols-1 gap-8">
-                        <GlassCard title="The Solution">
-                            <List items={project.solution} />
-                        </GlassCard>
-
                         <GlassCard title="Key Learnings">
                             <List items={project.learnings} />
                         </GlassCard>
@@ -248,7 +268,7 @@ const ImageCarousel = ({ images }) => {
 // 🔹 UPGRADED: Glassmorphism Cards for sections
 const GlassCard = ({ title, children }) => (
     <section className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl hover:bg-white/10 transition-colors duration-500 h-full">
-        <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300 mb-6 border-b border-white/10 pb-4">
+        <h2 className="text-3xl font-bold bg-clip-text text-white mb-6 border-b border-white/10 pb-4">
             {title}
         </h2>
         {children}

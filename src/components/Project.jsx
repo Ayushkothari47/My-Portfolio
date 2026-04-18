@@ -64,15 +64,6 @@ const projects = [
     {
         id: 6,
         tag: "Embedded System",
-        slug: "automatic-sanitizer",
-        img: handSanitizerThumb,
-        title: "Automatic Sanitizer Dispenser",
-        desc: "Touchless sanitizer system using IR sensors.",
-        associationWith: [dbuuIcon],
-    },
-    {
-        id: 7,
-        tag: "Embedded System",
         slug: "smart-car-parking",
         img: pic,
         title: "Smart Car Parking",
@@ -80,7 +71,7 @@ const projects = [
         associationWith: [dbuuIcon],
     },
     {
-        id: 8,
+        id: 7,
         tag: "Tools",
         slug: "link-analyzer",
         img: linkAnalyzerThumb,
