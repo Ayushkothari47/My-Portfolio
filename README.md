@@ -19,22 +19,23 @@ A modern personal portfolio website built using **Vite** to showcase my projects
 ---
 
 ## 📂 Project Structure
+```bash
 project-root/
 │── public/
 │── src/
-│ ├── assets/
-│ ├── components/
-│ ├── pages/
-| ├── App.css
-| ├── App.jsx
-| ├── index.css
-│ └── main.jsx
+│   ├── assets/
+│   ├── components/
+│   ├── pages/
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
 │── index.html
 │── package.json
 │── postcss.config.js
 │── tailwind.config.js
 └── vite.config.js
-
+```
 ---
 
 ## 📂 Author
