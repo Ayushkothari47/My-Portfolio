@@ -18,13 +18,6 @@ A modern personal portfolio website built using **Vite** to showcase my projects
 
 ---
 
-## 🛠️ Tech Stack
-- Frontend: HTML, CSS, JavaScript
-- Framework: (React / Vue / Vanilla — update this)
-- Build Tool: Vite
-
----
-
 ## 📂 Project Structure
 project-root/
 │── public/
