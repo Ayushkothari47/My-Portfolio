@@ -8,7 +8,15 @@ function Navbar() {
 
   const timeoutRef = useRef(null);
 
-  const navItems = ["Home", "About", "Journey", "Services", "Portfolio"];
+  const navItems = ["Home", "About", "Journey", "Projects"];
+
+  // Add this helper function inside your Navbar component
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id.toLowerCase());
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   // Reset hide timer (2 seconds)
   const resetTimer = () => {
@@ -64,7 +72,10 @@ function Navbar() {
             {navItems.map((item) => (
               <div
                 key={item}
-                onClick={() => setActive(item)}
+                onClick={() => {
+                  setActive(item);
+                  scrollToSection(item);
+                }}
                 className={`cursor-pointer transition-all duration-300
                 transform skew-x-[-20deg]
                 bg-gradient-to-br from-purple-500/10 to-white/10 backdrop-blur-lg
@@ -75,9 +86,8 @@ function Navbar() {
               >
                 <span
                   className={`block transform skew-x-[20deg]
-                  ${
-                    active === item ? "text-[#cc99ff]" : "text-gray-300"
-                  }
+                  ${active === item ? "text-[#cc99ff]" : "text-gray-300"
+                    }
                   hover:text-white`}
                 >
                   {item}
@@ -118,15 +128,15 @@ function Navbar() {
               key={item}
               onClick={() => {
                 setActive(item);
-                setOpen(false);
+                scrollToSection(item);
+                setOpen(false); // Close mobile menu
               }}
               className={`cursor-pointer px-4 py-2 rounded-full text-center transition-all duration-300
               bg-gradient-to-br from-purple-500/10 to-white/10 backdrop-blur-lg
               border border-purple-400/30
               shadow-[0_0_10px_rgba(168,85,247,0.4)]
-              ${
-                active === item ? "text-[#cc99ff]" : "text-white"
-              }
+              ${active === item ? "text-[#cc99ff]" : "text-white"
+                }
               hover:shadow-[0_0_18px_rgba(168,85,247,0.7)]`}
             >
               {item}

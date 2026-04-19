@@ -22,14 +22,23 @@ function HomePage() {
       <ShootingStars />
 
       {/* 2. Your Content stays in front */}
-      <div className="relative z-10"> 
+      <div className="relative z-10">
         <Navbar />
-        <HeroSection /> 
 
-        <Reveal><About /></Reveal>
-        <Reveal><Portfolio /></Reveal>
-        <Reveal><Resume /></Reveal>
-        <Reveal><Project /></Reveal>
+        {/* Add IDs to your sections or wrappers */}
+        <div id="home"><HeroSection /></div>
+
+        <Reveal>
+          <div id="about"><About /></div>
+        </Reveal>
+
+        <Reveal>
+          <div id="journey"><Resume /></div>
+        </Reveal>
+
+        <Reveal>
+          <div id="projects"><Project /></div>
+        </Reveal>
       </div>
     </div>
   )
