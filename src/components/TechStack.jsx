@@ -7,6 +7,8 @@ import bervoIcon from "../assets/bervoIcon.png";
 import cloudinaryIcon from "../assets/cloudinaryIcon.png";
 import vercel from "../assets/vercelIcon.webp";
 import githubIcon from "../assets/gitIcon.png";
+import pythonIcon from  "../assets/python.png"
+import kotlinIcon from "../assets/kotlin.png"
 
 const techIcons = {
     "React.js": reactIcon,
@@ -16,7 +18,9 @@ const techIcons = {
     "Brevo": bervoIcon,
     "Cloudinary": cloudinaryIcon,
     "Vercel": vercel,
-    "Github": githubIcon
+    "Github": githubIcon,
+    "python":pythonIcon,
+    "kotlin":kotlinIcon
 };
 
 const TechStackSection = ({ tech }) => {

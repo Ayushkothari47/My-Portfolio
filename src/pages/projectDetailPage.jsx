@@ -32,7 +32,7 @@ function ProjectDetailPage() {
             title: "Aarna Enterprises",
             category: "Web Development Project",
             // ✅ NEW: Added the live link to your project object
-            liveLink: "https://aarnaenterprises.vercel.app/", 
+            liveLink: "https://aarnaenterprises.vercel.app/",
             images: getProjectImages("aarnaEnterprises", 12),
             overview:
                 "A custom-built, responsive website developed for a travel business in Rishikesh to enhance online visibility and streamline lead generation, tailored to meet specific client requirements.",
@@ -54,14 +54,60 @@ function ProjectDetailPage() {
             ],
             challenges: [
                 "Client required a zero-maintenance-cost solution, so the backend was deployed on Render and the frontend on Vercel using free-tier plans. A key challenge was Render’s inactivity timeout, which causes cold start delays. This was addressed by preloading essential assets on the frontend and triggering a background request on page load, ensuring the backend initializes seamlessly without impacting user experience.",
-                  "Optimizing asset loading and reducing initial load time",
+                "Optimizing asset loading and reducing initial load time",
             ],
-            
+
             learnings: [
                 "Gained hands-on experience in real-world client project management.",
                 "Learned to handle multiple APIs efficiently with low latency.",
                 "Built experience with content management workflows and automated email services.",
                 "Utilizing fallback technique for cold start servers."
+            ],
+        },
+
+
+        {
+            slug: "swasthya-naari",
+            title: "Swasthya Naari",
+            category: "Internet of Things (IoT)",
+            // ✅ NEW: Added the live link to your project object
+            liveLink: "",
+            images: getProjectImages("swasthyaNaari", 5),
+            overview:
+                "A smart menstrual product vending machine integrated with a mobile app, designed specifically for rural areas, utilizes AI-based facial recognition technology to identify users. The system can be managed by the village sarpanch, who can add or remove users by updating their images and details. The machine provides free menstrual products to registered users within limits set by the sarpanch. It also includes an audio narration feature and supports three major languages—Hindi, English, and Bengali—ensuring accessibility for illiterate users through a simple interface with three color-coded buttons.",
+            problem:
+                "Access to menstrual hygiene products remains a significant challenge in many rural areas due to limited availability, social stigma, and lack of awareness. Women and girls often face barriers in obtaining affordable or free sanitary products, leading to poor hygiene practices, health risks, and reduced participation in daily activities such as education and work.",
+            tech: {
+                development: ["python", "Node.js", "kotlin"],
+                database: ["MongoDB"],
+                services: ["Cloudinary"],
+                deployment: ["Github", "Render",],
+            },
+            features: [
+                "Built using Raspberry Pi 4 for a compact and cost-effective hardware solution",
+                "Headless system setup and management using SSH for secure remote access",
+                "VNC Server integration for remote desktop monitoring and control",
+                "AI-based facial recognition for user identification and access control",
+                "Centralized user management system controlled by local authority (Sarpanch)",
+                "Automated distribution control with configurable usage limits per user",
+                "Multilingual audio guidance (Hindi, English, Bengali) for inclusive accessibility",
+                "Simple three-button interface designed for ease of use by illiterate users",
+            ],
+            challenges: [
+                "Deploying and configuring the Raspberry Pi 4 for reliable, continuous operation in rural environments with limited technical infrastructure",
+                "Establishing secure and stable remote access using SSH and VNC during the headless development and deployment phase",
+                "Implementing accurate AI-based facial recognition under varying lighting and environmental conditions",
+                "Designing an intuitive interface for users with low literacy levels while ensuring multilingual accessibility",
+                "Ensuring data privacy and secure storage of user information, including facial data",
+                "Managing hardware constraints such as power reliability, storage limitations, and performance optimization on edge devices",
+            ],
+
+            learnings: [
+                "Gained practical experience in developing and deploying solutions on Raspberry Pi 4 for real-world applications",
+                "Learned to configure and manage headless systems using SSH and VNC for remote development and monitoring",
+                "Developed an understanding of implementing AI-based facial recognition in constrained hardware environments",
+                "Improved skills in designing inclusive user interfaces for low-literacy and multilingual users",
+                "Gained insights into handling hardware-software integration and optimizing system performance on edge devices",
             ],
         },
     ];
@@ -107,18 +153,18 @@ function ProjectDetailPage() {
 
                         {/* ✅ NEW: Beautiful Live Link Button */}
                         {project.liveLink && (
-                            <a 
-                                href={project.liveLink} 
-                                target="_blank" 
+                            <a
+                                href={project.liveLink}
+                                target="_blank"
                                 rel="noopener noreferrer"
                                 className="group relative inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-white transition-all duration-200 bg-purple-600 border border-transparent rounded-full hover:bg-purple-700 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:-translate-y-1"
                             >
                                 View Live Project
-                                <svg 
-                                    className="w-5 h-5 ml-2 -mr-1 transition-transform duration-200 group-hover:translate-x-1" 
-                                    fill="none" 
-                                    stroke="currentColor" 
-                                    viewBox="0 0 24 24" 
+                                <svg
+                                    className="w-5 h-5 ml-2 -mr-1 transition-transform duration-200 group-hover:translate-x-1"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
                                     xmlns="http://www.w3.org/2000/svg"
                                 >
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
@@ -140,7 +186,7 @@ function ProjectDetailPage() {
                                     {project.overview}
                                 </p>
                             </GlassCard>
-                            
+
                             <GlassCard title="Problem Statement">
                                 <p className="text-gray-300 leading-relaxed text-lg">
                                     {project.problem}
@@ -254,9 +300,8 @@ const ImageCarousel = ({ images }) => {
                     <button
                         key={i}
                         onClick={() => goToSlide(i)}
-                        className={`h-2 rounded-full transition-all duration-300 ${
-                            i === current ? "w-8 bg-purple-500" : "w-2 bg-gray-500/50 hover:bg-gray-400"
-                        }`}
+                        className={`h-2 rounded-full transition-all duration-300 ${i === current ? "w-8 bg-purple-500" : "w-2 bg-gray-500/50 hover:bg-gray-400"
+                            }`}
                         aria-label={`Go to slide ${i + 1}`}
                     />
                 ))}
