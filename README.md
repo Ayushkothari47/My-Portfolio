@@ -38,7 +38,6 @@ project-root/
 ```
 ---
 
-## 📂 Author
-Ayush Kothari
-GitHub: https://github.com/Ayushkothari47
-LinkedIn: https://www.linkedin.com/in/ayush-kothari-522958290/
+## 👤 Ayush Kothari
+- 🔗 GitHub: [Ayushkothari47](https://github.com/Ayushkothari47)  
+- 💼 LinkedIn: [Ayush Kothari](https://www.linkedin.com/in/ayush-kothari-522958290/)
