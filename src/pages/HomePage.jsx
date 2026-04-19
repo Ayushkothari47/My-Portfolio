@@ -32,6 +32,10 @@ function HomePage() {
           <div id="about"><About /></div>
         </Reveal>
 
+         <Reveal>
+          <div id="about"><Portfolio /></div>
+        </Reveal>
+
         <Reveal>
           <div id="journey"><Resume /></div>
         </Reveal>
