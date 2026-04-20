@@ -216,6 +216,8 @@ function Resume() {
                 <div className="border-b border-[#9933ff]/20 mt-3 group-hover:border-[#9933ff]/60 transition-colors"></div>
               </div>
 
+              <button className="button">More</button>
+
             </div>
           </div>
         </div>
